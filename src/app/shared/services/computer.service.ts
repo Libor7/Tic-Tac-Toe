@@ -24,22 +24,17 @@ export class ComputerService {
   }
 
   computerMove(): void {
-    /** TODO - počítač vyberie pole, kam umiestni svoj znak - spraviť mark toggle (zvoliť si kruh, alebo krížik) */
-    /** tri krížiky v rade zmenia farbu na zelenú, tri kruhy v rade zmenia farbu na červenú */
-    /** color: #008000;		#ff0000 */
-    /** možnosť vybrať či chceme hrať na prvé víťazné (po výhre zobrazí alert), alebo na body (*ngIf - section 
-	zujúcu počet bodov pre oboch hráčov s ikonou krížiku a kruhu) */
+    /** TODO */
   }
 
   private getRandomInteger(max: number): number {
     return Math.floor(Math.random() * max);
   }
 
-  getRandomField(row: number, col: number): number {
+  getRandomField(row: number, col: number): number {			// pridať private access modifier 
     let rowIndex = this.getRandomInteger(row);
     let colIndex = this.getRandomInteger(col);
-console.log(this.board[rowIndex][colIndex]);			// private 		PRIDAT BUTTON NEW GAME - ERROR, AK RESIZE
-    return this.board[rowIndex][colIndex];		// Ak vyberie, zistiť, či je 0, ak je 0 zmeniť na 1 alebo 2, podla 
-	// toho, čo má pridelené pocítac - subjekt odoslať informáciu do main, kde pridá 1 / 2 znak tomu polu 
+console.log(this.board[rowIndex][colIndex]);
+    return this.board[rowIndex][colIndex];
   }
 }
