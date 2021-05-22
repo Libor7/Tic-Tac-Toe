@@ -1,0 +1,22 @@
+<div id="playing-area" #playingArea>
+  <table>
+    <tr *ngFor="let rep of setRepetition(boardRows); let parentIndex = index; let firstTr = first; let lastTr = last">
+      <td *ngFor="let rep of setRepetition(boardColumns); let index = index; let firstTd = first; let lastTd = last" 
+	  (click)="placeMark($event)" [ngStyle]="drawGridBoundaries(firstTr, lastTr, firstTd, lastTd)">
+        <i class="material-icons" [attr.data-row]="parentIndex" [attr.data-col]="index">{{ currentMark }}</i>
+      </td>
+    </tr>
+  </table>
+
+  <div *ngIf="isGameSettingsVisible" id="settings-area">
+    <div id="setting-controls">
+      <input type="number" [ngModel]="boardColumns" (ngModelChange)="setColumns($event)" min="3" [max]="maxCols">
+      <i class="material-icons multiply-icon">close</i>
+      <input type="number" [ngModel]="boardRows" (ngModelChange)="setRows($event)" min="3" [max]="maxRows">
+      <input type="radio" name="marksInRow" [(ngModel)]="marksInRowToWin" [value]="3">
+      <input type="radio" name="marksInRow" [(ngModel)]="marksInRowToWin" [value]="4">
+      <input type="radio" name="marksInRow" [(ngModel)]="marksInRowToWin" [value]="5">
+      <button type="button">Uložiť nastavenia</button>
+    </div>
+  </div>
+</div>

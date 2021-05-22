@@ -1,0 +1,10 @@
+#header-wrapper {
+  height: 100%;
+  display: flex;
+}
+
+@media screen and (min-width: 700px) {
+  #header-wrapper {
+    flex-direction: column;
+  }
+}

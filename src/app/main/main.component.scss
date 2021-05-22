@@ -1,0 +1,44 @@
+#playing-area {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table, td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.material-icons {
+  font-size: 50px;
+  vertical-align: middle;
+}
+
+#settings-area {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+background-color: #fff;
+box-shadow: -2px 2px 9px 0px #c1c1c1;
+}
+
+.multiply-icon {
+  font-size: 1em;
+}
+
+@media screen and (min-width: 700px) {
+  #settings-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+width: 200px;
+height: 200px;
+background-color: #fff;
+border-radius: 0 0 0 100%;
+box-shadow: -2px 2px 9px 0px #c1c1c1;
+  }
+}
